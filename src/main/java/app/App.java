@@ -63,5 +63,8 @@ public class App {
 
         System.out.println(viagemNacional1.getDestino().getCidade());
         System.out.println(viagemInternacional1.getDestino().getCidade());
+
+        System.out.println(viagemInternacional1.calcularPrevisaoDeDiasParaRetorno());
+        System.out.println(viagemNacional1.calcularPrevisaoDeDiasParaRetorno());
     }
 }

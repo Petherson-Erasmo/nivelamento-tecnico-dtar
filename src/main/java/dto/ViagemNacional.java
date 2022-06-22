@@ -1,13 +1,11 @@
 package dto;
 
 import enums.Destinos;
+import interfaces.CalculadoraDePrevisao;
 import utils.ArquivosUtils;
-
-import java.io.FileInputStream;
 import java.util.List;
-import java.util.Properties;
 
-public class ViagemNacional extends Viagem {
+public class ViagemNacional extends Viagem implements CalculadoraDePrevisao {
     private String cpf;
 
     public ViagemNacional(Destinos lugarDeDestino) {
@@ -32,5 +30,19 @@ public class ViagemNacional extends Viagem {
         } else {
             throw new Exception("Viagens nacionais não podem ter mais que " + limiteDeAcompanhantes + " acompanhante");
         }
+    }
+
+    public int calcularPrevisaoDeDiasParaRetorno() {
+        int quantidadeDeDias = 0;
+
+        switch (this.getDestino()){
+            case BONITO: quantidadeDeDias = 4; break;
+            case GRAMADO: quantidadeDeDias = 9; break;
+            case CURITIBA: quantidadeDeDias = 2; break;
+            case CAPITOLIO: quantidadeDeDias = 6; break;
+            case BELOHORIZONTE: quantidadeDeDias = 2; break;
+        }
+
+        return quantidadeDeDias;
     }
 }
