@@ -5,7 +5,8 @@ public enum Destinos {
     CURITIBA("Curitiba"),
     BELOHORIZONTE("Belo Horizonte"),
     CAPITOLIO("Capitólio"),
-    BONITO("Bonito");
+    BONITO("Bonito"),
+    LISBOA("Lisboa");
 
     private String cidade;
 
